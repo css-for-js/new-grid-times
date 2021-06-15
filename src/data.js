@@ -59,3 +59,100 @@ export const SECONDARY_STORIES = [
     abstract: `Ludish Atvalatashia was in his 50s when he launched his first couture line. Famously, he worked as an engineer for Blue Rocket, and learned that many of his inventions were quite eye-catching on the runway. This week, though, whistleblowers from within his agency have revealed the toxic nature of their work environment.`,
   },
 ];
+
+export const OPINION_STORIES = [
+  {
+    id: 'o-a',
+    author: 'Stephen Abebe',
+    avatar: '/images/avatar-stephen-abebe.jpg',
+    title:
+      'Humans need water to survive, and so do your potted plants!',
+  },
+  {
+    id: 'o-b',
+    author: 'Mario DeLuciano',
+    avatar: '/images/avatar-mario-deluciano.jpg',
+    title: 'Sports! The secret to winning big??',
+  },
+  {
+    id: 'o-c',
+    author: 'Alice Smith',
+    avatar: '/images/avatar-alice-smith.jpg',
+    title: 'Why I’ll never buy groceries in-person again',
+  },
+  {
+    id: 'o-d',
+    author: 'Rocko Pierce Stanley',
+    avatar: '/images/avatar-rocko-pierce-stanley.jpg',
+    title: 'Prediction: Disco is coming back, with a vengeance',
+  },
+];
+
+export const MARKET_DATA = [
+  {
+    tickerSymbol: 'AAPL',
+    exchangeName: 'NASDAQ',
+    percentChange: 4.5,
+  },
+  {
+    tickerSymbol: 'AMC',
+    exchangeName: 'NYSE',
+    percentChange: 7.9,
+  },
+  {
+    tickerSymbol: 'ENB',
+    exchangeName: 'TSE',
+    percentChange: -12.4,
+  },
+  {
+    tickerSymbol: 'GOOG',
+    exchangeName: 'NASDAQ',
+    percentChange: 8.1,
+  },
+  {
+    tickerSymbol: 'AMZN',
+    exchangeName: 'NASDAQ',
+    percentChange: -6.6,
+  },
+  {
+    tickerSymbol: 'MSFT',
+    exchangeName: 'NASDAQ',
+    percentChange: -1.2,
+  },
+];
+
+export const SPORTS_STORIES = [
+  {
+    id: 's-a',
+    image: {
+      src: '/images/habs.jpg',
+      alt: 'Montreal Canadiens goalie Carey Price covering his net',
+    },
+    title: 'Montreal Canadiens hope to settle the score in Vegas',
+  },
+  {
+    id: 's-b',
+    image: {
+      src: '/images/bicycles.jpg',
+      alt: 'Lots of men in cute matching outfits riding bicycles',
+    },
+    title: 'In surprise move, the Tour de France moves to Belgium',
+  },
+  {
+    id: 's-c',
+    image: {
+      src: '/images/football.jpg',
+      alt: 'A football player runs with the ball, whilst being chased by another player',
+    },
+    title:
+      'The Texas Giants eke out a victory after a late-game touchdown',
+  },
+  {
+    id: 's-d',
+    image: {
+      src: '/images/decathlon.jpg',
+      alt: 'Women sprinting on a race track',
+    },
+    title: 'The surprising result for this summer decathlon',
+  },
+];

@@ -15,8 +15,8 @@ export const COLORS = {
 
 export const WEIGHTS = {
   normal: 400,
-  medium: 500,
-  bold: 800,
+  medium: 550,
+  bold: 700,
 };
 
 export const BREAKPOINTS = {

@@ -52,7 +52,7 @@ const Header = () => {
 };
 
 const SuperHeader = styled.div`
-  padding: 16px;
+  padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
 
@@ -90,18 +90,27 @@ const MobileActionGroup = styled(ActionGroup)`
 
 const Side = styled.div`
   flex: 1;
+  display: none;
 
   &:last-of-type {
-    display: flex;
     justify-content: flex-end;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    display: flex;
   }
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 48px;
+
+  @media ${QUERIES.laptopAndUp} {
+    justify-content: revert;
+  }
 `;
 
 const SubscribeWrapper = styled.div`
