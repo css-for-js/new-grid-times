@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
+import { COLORS, WEIGHTS, FAMILIES } from '../../constants';
+
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -45,6 +47,28 @@ table {
 	border-spacing: 0;
 }
 
+/* COLORS */
+html {
+  --color-white: ${COLORS.white};
+  --color-offblack: ${COLORS.offblack};
+  --color-gray-100: ${COLORS.gray[100]};
+  --color-gray-300: ${COLORS.gray[300]};
+  --color-gray-500: ${COLORS.gray[500]};
+  --color-gray-700: ${COLORS.gray[700]};
+  --color-gray-900: ${COLORS.gray[900]};
+  --color-primary: ${COLORS.primary};
+  --color-secondary: ${COLORS.secondary};
+  --color-urgent: ${COLORS.urgent};
+
+  --font-weight-normal: ${WEIGHTS.normal};
+  --font-weight-medium: ${WEIGHTS.medium};
+  --font-weight-bold: ${WEIGHTS.bold};
+
+  --font-family-serif: ${FAMILIES.serif};
+  --font-family-sans-serif: ${FAMILIES.sansSerif};
+  --font-family-logo: ${FAMILIES.logo};
+}
+
 
 /* GLOBAL STYLES */
 *,
@@ -52,9 +76,8 @@ table {
 *:after {
   box-sizing: border-box;
   line-height: 1.5;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Crimson Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: auto;
 }
 
 #root {
@@ -75,6 +98,35 @@ html {
 
 html, body, #root {
   height: 100%;
+}
+
+body {
+  background-color: var(--color-gray-100);
+}
+
+/*
+  Remove default button styles. We'll provide our own at the
+  component level
+*/
+button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: 2px auto var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(.focus-visible) {
+    outline: none;
+  }
 }
 `;
 

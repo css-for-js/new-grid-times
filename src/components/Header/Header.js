@@ -1,73 +1,123 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Menu, Search, User } from 'react-feather';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { QUERIES } from '../../constants';
+
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
+import Button from '../Button';
 
 const Header = () => {
-  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
-
   return (
     <header>
-      <SuperHeader />
+      <SuperHeader>
+        <Row>
+          <MobileActionGroup>
+            <button>
+              <Search size={24} />
+            </button>
+            <button>
+              <Menu size={24} />
+            </button>
+          </MobileActionGroup>
+          <MobileActionGroup>
+            <button>
+              <User size={24} />
+            </button>
+          </MobileActionGroup>
+        </Row>
+      </SuperHeader>
       <MainHeader>
         <Side>
-          <Logo />
+          <DesktopActionGroup>
+            <button>
+              <Search size={24} />
+            </button>
+            <button>
+              <Menu size={24} />
+            </button>
+          </DesktopActionGroup>
         </Side>
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
-        <Side />
+        <Logo />
+        <Side>
+          <SubscribeWrapper>
+            <Button>Subscribe</Button>
+            <SubLink href="/login">Already a subscriber?</SubLink>
+          </SubscribeWrapper>
+        </Side>
       </MainHeader>
-
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-      />
     </header>
   );
 };
 
-const MainHeader = styled.div`
-  display: flex;
-  align-items: baseline;
-  padding: 18px 32px;
-  height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+const SuperHeader = styled.div`
+  padding: 16px;
+  background: var(--color-gray-900);
+  color: white;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: none;
+  }
 `;
 
-const Nav = styled.nav`
+const Row = styled(MaxWidthWrapper)`
   display: flex;
-  gap: 48px;
-  margin: 0px 48px;
+  justify-content: space-between;
+`;
+
+const ActionGroup = styled.div`
+  display: flex;
+  gap: 24px;
+
+  svg {
+    display: block;
+  }
+`;
+
+const DesktopActionGroup = styled(ActionGroup)`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: flex;
+  }
+`;
+const MobileActionGroup = styled(ActionGroup)`
+  @media ${QUERIES.laptopAndUp} {
+    display: none;
+  }
 `;
 
 const Side = styled.div`
   flex: 1;
+
+  &:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
 
-const NavLink = styled.a`
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+const MainHeader = styled(MaxWidthWrapper)`
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+`;
 
-  &:first-of-type {
-    color: ${COLORS.secondary};
-  }
+const SubscribeWrapper = styled.div`
+  position: relative;
+`;
+
+const SubLink = styled.a`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-gray-900);
 `;
 
 export default Header;

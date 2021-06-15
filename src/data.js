@@ -10,89 +10,52 @@
  * any best-practices from stuff like this data file!
  */
 
-const SHOES = [
+export const MAIN_STORY = {
+  id: 'a',
+  title: 'Study: Video games improve reflexes and critical thinking',
+  image: {
+    src: '/images/gamepad.jpg',
+    alt: 'An XBox gamepad, shown in dramatic lighting',
+  },
+  location: 'San Francisco',
+  abstract: `24-year-old Anthony Vega enjoyed killing zombies, but didn’t realize that those skills were preparing him for work in the 21st century. It turns out, games like Super Mario Brothers and Mega Zombie Bash 2099 have a surprising correlation with in-demand skills like critical reasoning and abstract thinking.
+
+Researchers in the San Francisco think-tank Bestcap Innovations posit that time spent playing video games can be productive, in moderation. Active practice can boost reflexes, skills that will come in handy regardless of your view of the future. Even in the event of a zombie apocalypse, time spent in Mega Zombie Bash 2099 should have a powerful impact.
+
+Not everyone views it the same way, though. David Davidson Sr., professor at LIT University, tells The Grid that any benefits are overshadowed by the social isolation caused by long play sessions, alone in a dark basement. “We don’t celebrate the silver linings that come from other destructive addictions”, he says.
+
+(Please note, this and all the stories on this page are placeholders, made up off the top of my head. Please don't assume anything in them is true!)`,
+};
+
+export const SECONDARY_STORIES = [
   {
-    slug: 'tech-challenge',
-    name: 'NikeCourt Tech Challenge 20',
-    imageSrc: '/assets/tech-challenge.jpg',
-    price: 16500,
-    salePrice: null,
-    // 1 hour ago! 🔥
-    releaseDate: Date.now() - 1000 * 60 * 60 * 1,
-    numOfColors: 2,
+    id: 'b',
+    title:
+      'Politicians scramble as court overrules invalid legislation',
+    image: {
+      src: '/images/politicians.jpg',
+      alt: 'Lots of white men in suits listen apathetically to a presentation',
+    },
+    abstract: `In a surprising judgment that surprised no one, the New Amsterdam court of appeals finds Bill 234 unconstitutional, overturning one of the Modern Sovereign party's core legislative achievements. Now, lawmakers are working furiously to rewrite the law before the Royal Ascent next month.`,
   },
   {
-    slug: 'metcon-5',
-    name: 'Nike Metcon 5 AMP',
-    imageSrc: '/assets/metcon-5.jpg',
-    price: 16500,
-    salePrice: null,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 2,
-    numOfColors: 1,
+    id: 'c',
+    title:
+      'Vintage cars fetch a premium as car industry shifts gears',
+    image: {
+      src: '/images/old-car.jpg',
+      alt: 'A vintage old Beetle (car), orange and with signs of wear',
+    },
+    abstract: `In a Landsdowne auction, a vintage 1900s beetle sold “as-is” for ȿ120,000, shattering expectations and records alike. As the automotive industry focuses on ALVs (Autonomous Levitated Vehicles), some enthusiasts are paying big bucks for a more traditional driving experience.`,
   },
   {
-    slug: 'phantom',
-    name: 'Nike Phantom Vision',
-    imageSrc: '/assets/phantom.jpg',
-    price: 16500,
-    salePrice: null,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 4,
-    numOfColors: 4,
-  },
-  {
-    slug: 'pegasus',
-    name: 'Nike Air Zoom Pegasus',
-    imageSrc: '/assets/pegasus.jpg',
-    price: 16500,
-    salePrice: null,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 16,
-    numOfColors: 1,
-  },
-  {
-    slug: 'joyride',
-    name: 'Nike Joyride Dual Run',
-    imageSrc: '/assets/joyride.jpg',
-    price: 17000,
-    salePrice: null,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 40,
-    numOfColors: 2,
-  },
-  {
-    slug: 'legend-academy',
-    name: 'Nike Tiempo Legend 8',
-    imageSrc: '/assets/legend-academy.jpg',
-    price: 16500,
-    salePrice: 12500,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 50,
-    numOfColors: 8,
-  },
-  {
-    slug: 'react-infinity',
-    name: 'Nike React Infinity Pro',
-    imageSrc: '/assets/react-infinity.jpg',
-    price: 16000,
-    salePrice: 14500,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 75,
-    numOfColors: 1,
-  },
-  {
-    slug: 'phantom-flyknit',
-    name: 'Nike React Phantom Run Flyknit 2',
-    imageSrc: '/assets/phantom-flyknit.jpg',
-    price: 18500,
-    salePrice: 16000,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 100,
-    numOfColors: 4,
-  },
-  {
-    slug: 'lebron',
-    name: 'LeBron 17',
-    imageSrc: '/assets/lebron.jpg',
-    price: 26000,
-    salePrice: null,
-    releaseDate: Date.now() - 1000 * 60 * 60 * 24 * 120,
-    numOfColors: 1,
+    id: 'd',
+    title:
+      'This season’s hottest fashions unveiled amidst designer controversy',
+    image: {
+      src: '/images/fashion.jpg',
+      alt: 'A stylish woman carries a dozen shopping bags',
+    },
+    abstract: `Ludish Atvalatashia was in his 50s when he launched his first couture line. Famously, he worked as an engineer for Blue Rocket, and learned that many of his inventions were quite eye-catching on the runway. This week, though, whistleblowers from within his agency have revealed the toxic nature of their work environment.`,
   },
 ];
-
-export default SHOES;
