@@ -110,6 +110,8 @@ const MainHeader = styled(MaxWidthWrapper)`
 
   @media ${QUERIES.laptopAndUp} {
     justify-content: revert;
+    margin-top: 16px;
+    margin-bottom: 64px;
   }
 `;
 

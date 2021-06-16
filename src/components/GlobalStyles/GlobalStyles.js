@@ -76,7 +76,6 @@ html {
 *:after {
   box-sizing: border-box;
   line-height: 1.5;
-  font-family: 'Crimson Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -102,6 +101,7 @@ html, body, #root {
 
 body {
   background-color: var(--color-gray-100);
+  font-family: 'Crimson Pro', sans-serif;
 }
 
 /*

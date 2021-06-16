@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 import {
   MAIN_STORY,
@@ -8,6 +8,7 @@ import {
   MARKET_DATA,
   SPORTS_STORIES,
 } from '../../data';
+import { QUERIES } from '../../constants';
 
 import Header from '../Header';
 import MaxWidthWrapper from '../MaxWidthWrapper';
@@ -18,7 +19,8 @@ import Advertisement from '../Advertisement';
 import MarketCard from '../MarketCard';
 import SectionTitle from '../SectionTitle';
 import MiniStory from '../MiniStory';
-import { QUERIES } from '../../constants';
+import Footer from '../Footer';
+import Spacer from '../Spacer';
 
 const App = () => {
   return (
@@ -59,7 +61,12 @@ const App = () => {
               })}
             </OpinionStoryList>
           </OpinionSection>
-          <WrappedAdvertisement />
+          <AdvertisementSection>
+            <Advertisement />
+          </AdvertisementSection>
+        </MainGrid>
+
+        <SpecialtyGrid>
           <MarketsSection>
             <SectionTitle
               cornerLink={{
@@ -92,8 +99,10 @@ const App = () => {
               ))}
             </SportsStories>
           </SportsSection>
-        </MainGrid>
+        </SpecialtyGrid>
       </MaxWidthWrapper>
+      <Spacer size={64} />
+      <Footer />
     </>
   );
 };
@@ -104,22 +113,39 @@ const MainGrid = styled.div`
     'main-story'
     'secondary-stories'
     'opinion-stories'
-    'advertisement'
-    'market'
-    'sports';
+    'advertisement';
   grid-gap: 48px;
-  /* Give ourselves some breathing room at the bottom */
-  padding-bottom: 128px;
+  margin-bottom: 48px;
 
   @media ${QUERIES.tabletAndUp} {
     grid-template-areas:
       'main-story secondary-stories'
       'advertisement advertisement'
-      'opinion-stories opinion-stories'
-      'market market'
-      'sports sports';
+      'opinion-stories opinion-stories';
     grid-gap: 48px 0;
     grid-template-columns: 2fr 1fr;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-areas:
+      'main-story secondary-stories opinion-stories'
+      'main-story advertisement advertisement';
+    grid-gap: 0px;
+    grid-template-columns: 5fr 4fr 3fr;
+  }
+`;
+
+const SpecialtyGrid = styled.div`
+  display: grid;
+  grid-template-areas:
+    'market'
+    'sports';
+  grid-gap: 48px;
+
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-areas: 'market sports';
+    grid-gap: 0px;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -127,24 +153,20 @@ const MainStorySection = styled.section`
   grid-area: main-story;
 
   @media ${QUERIES.tabletAndUp} {
-    position: relative;
-    padding-right: 32px;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 16px;
-      bottom: 0;
-      width: 1px;
-      height: 100%;
-      background-color: var(--color-gray-300);
-    }
+    border-right: 1px solid var(--color-gray-300);
+    margin-right: 16px;
+    padding-right: 16px;
   }
 `;
 
 const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
+
+  @media ${QUERIES.tabletAndUp} {
+    border-right: 1px solid var(--color-gray-300);
+    margin-right: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const StoryList = styled.div`
@@ -166,6 +188,11 @@ const OpinionDivider = styled(Divider)`
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+
+  @media ${QUERIES.laptopAndUp} {
+    /* Optical alignment */
+    margin-top: -6px;
+  }
 `;
 
 const OpinionStoryList = styled.div`
@@ -182,12 +209,24 @@ const OpinionStoryWrapper = styled.div`
   flex: 1;
 `;
 
-const WrappedAdvertisement = styled(Advertisement)`
+const AdvertisementSection = styled.section`
   grid-area: advertisement;
+
+  @media ${QUERIES.tabletAndUp} {
+    border-top: 1px solid var(--color-gray-300);
+    margin-top: 16px;
+    padding-top: 16px;
+  }
 `;
 
 const MarketsSection = styled.section`
   grid-area: market;
+
+  @media ${QUERIES.laptopAndUp} {
+    border-right: 1px solid var(--color-gray-300);
+    margin-right: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const MarketCards = styled.div`

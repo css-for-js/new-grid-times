@@ -1,12 +1,12 @@
 export const COLORS = {
   white: 'hsl(0deg 0% 100%)',
-  offblack: 'hsl(24deg 4% 5%)',
+  offblack: 'hsl(24deg 5% 6%)',
   gray: {
     100: 'hsl(40deg 12% 95%)',
     300: 'hsl(35deg 8% 80%)',
     500: 'hsl(30deg 4% 60%)',
     700: 'hsl(28deg 5% 40%)',
-    900: 'hsl(24deg 12% 20%)',
+    900: 'hsl(24deg 6% 16%)',
   },
   primary: 'hsl(224deg 30% 40%)',
   secondary: 'hsl(180deg 34% 37%)',

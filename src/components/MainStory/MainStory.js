@@ -19,7 +19,7 @@ const MainStory = ({
       <Abstract>
         <Location>{location}</Location> — {abstract}
       </Abstract>
-      <ReadMore href="/story">Continue Reading</ReadMore>
+      <ReadMore href="/story">Continue Reading…</ReadMore>
     </Wrapper>
   );
 };
@@ -53,6 +53,9 @@ const Abstract = styled.p`
   @media ${QUERIES.tabletAndUp} {
     -webkit-line-clamp: 16;
   }
+  @media ${QUERIES.laptopAndUp} {
+    -webkit-line-clamp: 10;
+  }
 `;
 
 const Location = styled.span`
@@ -62,6 +65,11 @@ const Location = styled.span`
 const ReadMore = styled.a`
   font-weight: var(--font-weight-medium);
   font-style: italic;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+  }
 `;
 
 export default MainStory;
