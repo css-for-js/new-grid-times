@@ -129,6 +129,7 @@ const SubLink = styled.a`
   font-size: 0.875rem;
   font-style: italic;
   color: var(--color-gray-900);
+  text-decoration: underline;
 `;
 
 export default Header;

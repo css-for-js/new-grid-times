@@ -64,19 +64,19 @@ const Footer = () => {
             <MainNavHeading>Regional Websites</MainNavHeading>
             <MainNavList>
               <li>
-                <a href="/us">The Grid United States</a>
+                <a href="/us">New Grid United States</a>
               </li>
               <li>
-                <a href="/eu">The Grid Europe</a>
+                <a href="/eu">New Grid Europe</a>
               </li>
               <li>
-                <a href="/asia">The Grid Asia</a>
+                <a href="/asia">New Grid Asia</a>
               </li>
               <li>
-                <a href="/mars">The Grid Mars and Beyond</a>
+                <a href="/mars">New Grid Mars and Beyond</a>
               </li>
               <li>
-                <a href="/au">The Grid Australia</a>
+                <a href="/au">New Grid Australia</a>
               </li>
             </MainNavList>
           </nav>

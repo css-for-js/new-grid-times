@@ -25,6 +25,7 @@ const Avatar = styled.img`
   display: block;
   width: 48px;
   height: 48px;
+  margin-left: 16px;
   border-radius: 50%;
   object-fit: cover;
   /* Optical alignment */
@@ -32,6 +33,7 @@ const Avatar = styled.img`
 
   @media ${QUERIES.tabletOnly} {
     float: revert;
+    margin-left: revert;
     margin-bottom: 8px;
   }
 `;
