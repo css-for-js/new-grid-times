@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { QUERIES } from '../../constants';
 
 const Advertisement = (props) => {
   return (
@@ -38,6 +39,10 @@ const Box = styled.div`
   width: 100%;
   height: 382px;
   background: var(--color-gray-300);
+
+  @media ${QUERIES.tabletAndUp} {
+    height: 120px;
+  }
 `;
 
 export default Advertisement;

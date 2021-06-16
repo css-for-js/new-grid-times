@@ -18,6 +18,7 @@ import Advertisement from '../Advertisement';
 import MarketCard from '../MarketCard';
 import SectionTitle from '../SectionTitle';
 import MiniStory from '../MiniStory';
+import { QUERIES } from '../../constants';
 
 const App = () => {
   return (
@@ -50,10 +51,10 @@ const App = () => {
                   index === OPINION_STORIES.length - 1;
 
                 return (
-                  <>
+                  <OpinionStoryWrapper>
                     <OpinionStory key={story.id} {...story} />
-                    {!isLastStory && <Divider />}
-                  </>
+                    {!isLastStory && <OpinionDivider />}
+                  </OpinionStoryWrapper>
                 );
               })}
             </OpinionStoryList>
@@ -109,10 +110,37 @@ const MainGrid = styled.div`
   grid-gap: 48px;
   /* Give ourselves some breathing room at the bottom */
   padding-bottom: 128px;
+
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-areas:
+      'main-story secondary-stories'
+      'advertisement advertisement'
+      'opinion-stories opinion-stories'
+      'market market'
+      'sports sports';
+    grid-gap: 48px 0;
+    grid-template-columns: 2fr 1fr;
+  }
 `;
 
 const MainStorySection = styled.section`
   grid-area: main-story;
+
+  @media ${QUERIES.tabletAndUp} {
+    position: relative;
+    padding-right: 32px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 16px;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-gray-300);
+    }
+  }
 `;
 
 const SecondaryStorySection = styled.section`
@@ -130,6 +158,12 @@ const Divider = styled.div`
   margin: 16px 0;
 `;
 
+const OpinionDivider = styled(Divider)`
+  @media ${QUERIES.tabletOnly} {
+    display: none;
+  }
+`;
+
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
 `;
@@ -137,6 +171,15 @@ const OpinionSection = styled.section`
 const OpinionStoryList = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media ${QUERIES.tabletOnly} {
+    flex-direction: row;
+    gap: 32px;
+  }
+`;
+
+const OpinionStoryWrapper = styled.div`
+  flex: 1;
 `;
 
 const WrappedAdvertisement = styled(Advertisement)`
@@ -155,16 +198,30 @@ const MarketCards = styled.div`
 
 const SportsSection = styled.section`
   grid-area: sports;
+  /*
+    HACK: This is necessary in order to allow grid children
+    to overflow. It shouldn't be used.
+  */
   overflow: auto;
 `;
 
 const SportsStories = styled.div`
-  display: flex;
-  overflow: auto;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 16px;
+
+  @media ${QUERIES.tabletAndUp} {
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+    /* Add some space around the scrollbar */
+    padding-bottom: 16px;
+  }
 `;
 
 const SportsStoryWrapper = styled.div`
-  min-width: 220px;
+  @media ${QUERIES.tabletAndUp} {
+    min-width: 220px;
+  }
 `;
 export default App;

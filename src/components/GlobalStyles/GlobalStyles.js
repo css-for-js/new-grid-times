@@ -128,6 +128,11 @@ button {
     outline: none;
   }
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 `;
 
 export default GlobalStyles;

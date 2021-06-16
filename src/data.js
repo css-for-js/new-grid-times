@@ -8,6 +8,12 @@
  * some corners when it comes to our data management, and
  * our JavaScript in general. Please don't try to glean
  * any best-practices from stuff like this data file!
+ *
+ * PLEASE NOTE: I made up all these stories myself, off the
+ * top of my head. It's perhaps an interesting glimpse into
+ * my psyche, but nothing you read in these stories should
+ * be taken as fact, or even as an opinion. It's all
+ * placeholder copy.
  */
 
 export const MAIN_STORY = {
@@ -20,11 +26,13 @@ export const MAIN_STORY = {
   location: 'San Francisco',
   abstract: `24-year-old Anthony Vega enjoyed killing zombies, but didn’t realize that those skills were preparing him for work in the 21st century. It turns out, games like Super Mario Brothers and Mega Zombie Bash 2099 have a surprising correlation with in-demand skills like critical reasoning and abstract thinking.
 
-Researchers in the San Francisco think-tank Bestcap Innovations posit that time spent playing video games can be productive, in moderation. Active practice can boost reflexes, skills that will come in handy regardless of your view of the future. Even in the event of a zombie apocalypse, time spent in Mega Zombie Bash 2099 should have a powerful impact.
+Researchers at the San Francisco think-tank Bestcap Innovations posit that time spent playing video games can be productive, in moderation. Active practice can boost reflexes, skills that will come in handy regardless of your view of the future. Even in the event of a zombie apocalypse, time spent in Mega Zombie Bash 2099 should have a powerful impact.
 
-Not everyone views it the same way, though. David Davidson Sr., professor at LIT University, tells The Grid that any benefits are overshadowed by the social isolation caused by long play sessions, alone in a dark basement. “We don’t celebrate the silver linings that come from other destructive addictions”, he says.
+Not everyone views it the same way, though. David Davidson Sr., professor at LIT University, tells The Grid that any benefits are overshadowed by the social isolation caused by long play sessions, alone in a dark basement. “My cat improves her reflexes by jumping on the dinner table and eating my fish sticks, but I don't celebrate that behaviour!”. Dr. Davidson, it should be noted, does not have a cat.
 
-(Please note, this and all the stories on this page are placeholders, made up off the top of my head. Please don't assume anything in them is true!)`,
+In 1996, early video game researchers discovered that Pac-Man players were 12% more likely to receive college admission, but 31% more likely to drop out. This suggests that, like famous sprinter Roger Bannister, video game players excel at quick bursts of activity, but struggle with long-term sustained effort.
+
+More than 8 billion people around the world play video games, either recreationally or professionally.`,
 };
 
 export const SECONDARY_STORIES = [
@@ -154,5 +162,13 @@ export const SPORTS_STORIES = [
       alt: 'Women sprinting on a race track',
     },
     title: 'The surprising result for this summer decathlon',
+  },
+  {
+    id: 's-3',
+    image: {
+      src: '/images/coach.jpg',
+      alt: 'A soccer coach places pylons on a field',
+    },
+    title: 'Behind the scenes: coaching a Little League team',
   },
 ];

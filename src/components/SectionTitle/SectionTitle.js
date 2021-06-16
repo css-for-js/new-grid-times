@@ -33,7 +33,11 @@ const CornerLink = styled.a`
   color: var(--color-gray-900);
   font-family: var(--font-family-sans-serif);
   font-weight: var(--font-weight-bold);
-  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 `;
 
 export default SectionTitle;

@@ -3,10 +3,12 @@ import styled from 'styled-components';
 
 const MiniStory = ({ id, image, title }) => {
   return (
-    <Wrapper>
-      <Image alt={image.alt} src={image.src} />
-      <Title>{title}</Title>
-    </Wrapper>
+    <a href={`/story/${id}`}>
+      <Wrapper>
+        <Image alt={image.alt} src={image.src} />
+        <Title>{title}</Title>
+      </Wrapper>
+    </a>
   );
 };
 
@@ -20,6 +22,7 @@ const Image = styled.img`
   width: 100%;
   aspect-ratio: 220 / 132;
   object-fit: cover;
+  border-radius: 4px;
 `;
 
 const Title = styled.h3`

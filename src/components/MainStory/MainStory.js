@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { QUERIES } from '../../constants';
 
 const MainStory = ({
   id,
@@ -11,10 +12,10 @@ const MainStory = ({
 }) => {
   return (
     <Wrapper {...delegated}>
-      <ArticleLink href={`/story/${id}`}>
+      <a href={`/story/${id}`}>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
-      </ArticleLink>
+      </a>
       <Abstract>
         <Location>{location}</Location> — {abstract}
       </Abstract>
@@ -25,11 +26,6 @@ const MainStory = ({
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
-`;
-
-const ArticleLink = styled.a`
-  color: inherit;
-  text-decoration: none;
 `;
 
 const Image = styled.img`
@@ -53,6 +49,10 @@ const Abstract = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 8;
   overflow: hidden;
+
+  @media ${QUERIES.tabletAndUp} {
+    -webkit-line-clamp: 16;
+  }
 `;
 
 const Location = styled.span`
@@ -62,8 +62,6 @@ const Location = styled.span`
 const ReadMore = styled.a`
   font-weight: var(--font-weight-medium);
   font-style: italic;
-  color: inherit;
-  text-decoration: none;
 `;
 
 export default MainStory;

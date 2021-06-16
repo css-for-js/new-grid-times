@@ -49,7 +49,6 @@ const Wrapper = styled.a`
   display: block;
   /* Optical alignment */
   padding: 6px 12px 8px;
-  text-decoration: none;
   color: var(--color-gray-900);
   background: var(--color-white);
   box-shadow: 2px 4px 12px hsl(0deg 0% 0% / 0.1);

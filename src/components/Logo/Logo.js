@@ -22,8 +22,6 @@ const Wrapper = styled.div`
 `;
 
 const Link = styled.a`
-  text-decoration: none;
-  color: inherit;
   font-family: var(--font-family-logo);
   font-size: 3rem;
 
