@@ -47,7 +47,7 @@ table {
 	border-spacing: 0;
 }
 
-/* COLORS */
+/* DESIGN TOKENS */
 html {
   --color-white: ${COLORS.white};
   --color-offblack: ${COLORS.offblack};

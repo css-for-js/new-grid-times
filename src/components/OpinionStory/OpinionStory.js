@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { QUERIES } from '../../constants';
 
 const MainStory = ({ id, title, author, avatar }) => {
   return (
@@ -21,21 +20,11 @@ const Wrapper = styled.article`
 `;
 
 const Avatar = styled.img`
-  float: right;
   display: block;
   width: 48px;
   height: 48px;
-  margin-left: 16px;
   border-radius: 50%;
   object-fit: cover;
-  /* Optical alignment */
-  transform: translateY(4px);
-
-  @media ${QUERIES.tabletOnly} {
-    float: revert;
-    margin-left: revert;
-    margin-bottom: 8px;
-  }
 `;
 
 const AuthorName = styled.p`
