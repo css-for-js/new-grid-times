@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-const MainStory = ({ id, title, author, avatar }) => {
+const OpinionStory = ({ id, title, author, avatar }) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper>
@@ -40,4 +40,4 @@ const ArticleTitle = styled.h3`
   line-height: 1.3;
 `;
 
-export default MainStory;
+export default OpinionStory;

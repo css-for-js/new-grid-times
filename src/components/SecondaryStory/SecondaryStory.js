@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-const MainStory = ({ id, title, image, location, abstract }) => {
+const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper>
@@ -47,4 +47,4 @@ const Abstract = styled.p`
   white-space: pre-wrap;
 `;
 
-export default MainStory;
+export default SecondaryStory;
