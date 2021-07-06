@@ -63,14 +63,6 @@ const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
 `;
 
-const StoryWrapper = styled.div`
-  &:not(:last-of-type) {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--color-gray-300);
-  }
-`;
-
 const StoryList = styled.div`
   display: flex;
   flex-direction: column;
