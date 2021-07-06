@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 // HACK: Normally, we'd receive a prop like `priceData` and
 // draw the graph based on that data. Because our graphs are
