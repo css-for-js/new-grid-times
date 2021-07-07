@@ -26,7 +26,7 @@ const Wrapper = styled.article`
 const Image = styled.img`
   grid-area: image;
   display: block;
-  width: 120px;
+  width: 100%;
   height: 120px;
   border-radius: 4px;
   object-fit: cover;
