@@ -1,6 +1,8 @@
 # New Grid Times — Module 7 workshop
 
-Introductory text
+In this workshop, our goal is to build a sophisticated, responsive grid layout for an online newspaper, the New Grid Times:
+
+![Desktop-sized mockup](/docs/desktop-mockup.png)
 
 ## Code structure
 
@@ -54,39 +56,35 @@ Like in the Sole&Ankle workshop, this workshop features a two-step header that c
 
 This workshop has been created with a "Mobile-first" methodology, and so your goal this time is to create a desktop variant of the header, and ensure the right header is used at both viewport sizes.
 
-IMAGES
-
-(You won't need to use CSS Grid for this exercise — think of this as more of a Flexbox review!)
+![Highlighted screenshot showing the header of the mockup](/docs/header-cutout.png)
 
 ---
 
-## Exercise 2: Mobile polish
+## Exercise 2: Prep and Polish
 
-Before we start working on the tablet and laptop grid layouts, we need to add a bit of missing polish to the mobile implementation.
+Before we start working on the tablet and laptop grid layouts, we need to add a bit of missing polish to the mobile implementation, and prep certain elements to make it easier to create our tablet/laptop grids.
 
 This exercise is split into a few mini-parts:
 
 ### Text truncation
 
-In the mockup, our main story is truncated on mobile after 8 lines of text:
+In the mockup, our main story's preview text is truncated on mobile after 8 lines of text:
 
-IMAGE
+![Close-up of the preview text on mobile](/docs/text-truncation-mobile.png)
 
-The exact # of lines shown depends on the viewport size. On tablet, it's 16:
+The exact # of lines shown depends on the viewport size. For example, the amount of lines doubles on tablet:
 
-IMAGE
+![Close-up of the preview text on mobile](/docs/text-truncation-tablet.png)
 
-On larger screens, we go back down to 10:
+> **Note:** on certain screen sizes, you may see an ellipsis alone on its own line. Don't worry about trying to solve for this.
 
-IMAGE
-
-The syntax for multi-line ellipsis is very hard to remember, so you might wish to [review the lesson from Module 6](https://courses.joshwcomeau.com/css-for-js/06-typography-and-media/03-text-overflow#multi-line-ellipsis).
+The syntax for multi-line ellipsis is difficult to remember, so you might wish to [review the lesson from Module 6](https://courses.joshwcomeau.com/css-for-js/06-typography-and-media/03-text-overflow#multi-line-ellipsis).
 
 ### Story borders
 
 There are also dividers between the stories that are in lists, like the secondary and opinion stories:
 
-IMAGE
+![Close-up showing the thin dividers between stories on mobile](/docs/dividers.png)
 
 Critically, the borders only run _between_ stories. Not above the top story, or below the last story.
 
@@ -96,35 +94,29 @@ A good place to start is in `MainStoryGrid.js`. That's where all of these storie
 
 Opinion stories show a picture of the journalist. On mobile, this image is meant to be shifted off to the side:
 
-IMAGE
+![Close-up of the Opinion section on mobile, highlighting the avatars](/docs/mobile-avatar-position.png)
 
-Update the styles in `OpinionStory.js` to shift the avatar.
+This same layout is used on laptop, but not on tablet. Update it across all relevant viewport sizes.
 
 ---
 
-## Exercise 3: Tablet and laptop grids
+## Exercise 3: Main story grid
 
-Alright, time to do some grid modifications!
+Alright, time to create our first responsive grid!
 
 Update the `MainStoryGrid` component to support the layouts shown in Figma for tablet and laptop.
 
-There are a few things that make this quite tricky. Here are some of the details that we'll need to cover, as well as some small hints about how to think about it:
+There are some interesting details that are easy to miss:
 
 ### Swapped OpinionStory styles
 
-On medium-sized (tablet) screens, the "opinion" section changes in two ways.
+In the last exercise, we updated our "Opinion" stories so that the avatar was shifted off to the side on mobile and laptop sizes.
 
-First, the arrangement updates so that the stories are shown side-by-side, instead of top-to-bottom.
+In our new tablet grid, the opinion section itself takes on a different layout:
 
-But even more than that, the styles within the story change. Instead of having the avatar off to the side, it becomes part of a vertical stack.
+![Close-up of the Opinion section on tablet, showing the new layout](/docs/opinion-row.png)
 
-On mobile/laptop:
-
-IMAGE
-
-On tablet:
-
-IMAGE
+Our stories are arranged horizontally in a row, instead of vertically in a column. The borders between stories disappear.
 
 We'll need to dip into `OpinionStory.js` and make some changes based on the viewport size. A `TabletOnly` query can be used for this case.
 
@@ -134,19 +126,23 @@ Similarly, on tablet, our `SecondaryStory` switches to a new layout.
 
 On mobile/laptop:
 
-IMAGE
+![Close-up of a "secondary" story on mobile](/docs/secondary-mobile.png)
 
 On tablet:
 
-IMAGE
+![Close-up of a "secondary" story on tablet](/docs/secondary-tablet.png)
 
 ### Grid dividers
 
 When our grid grows to have multiple columns, we want to add a thin grey line between the columns:
 
-SCREENSHOT
+![Highlighted screenshot of the dividers between rows and columns on the desktop grid](/docs/desktop-dividers.png)
 
 We discuss strategies for this situation in the [“Grid Dividers” lesson](https://courses.joshwcomeau.com/css-for-js/07-css-grid/11-grid-dividers).
+
+### Optional: Optical alignment
+
+After creating the grid, you may find that certain things don't sit completely right. Compare the output to the design, and look for opportunities to shift things around to match a bit more perfectly.
 
 ---
 
@@ -158,22 +154,29 @@ On mobile, we can use the [“World Famous” grid snippet](https://courses.josh
 
 When we get to the larger viewports, though, the sports stories operate a little bit differently: they form a single long line, with overflow to allow us to scroll horizontally:
 
-GIF
+![Highlighted screenshot of the dividers between rows and columns on the desktop grid](/docs/sports-overflow.gif)
 
 Finally, on large viewports, we want the market and sports sections to sit side-by-side, with a divider:
 
-IMAGE
+![Highlighted screenshot of the dividers between rows and columns on the desktop grid](/docs/specialty-grid-desktop.png)
 
 ---
 
 ## Exercise 5: Footer
 
-Well, we've made it to the bottom of the page!
+Last but not least, the footer!
 
-There are two main challenges to the footer:
+There are some alignment changes between different viewport sizes, like the `TopRow` and `SubFooter`:
 
-1. The columns of links (“Discover Content”, “Regional Websites”, etc) need to tile, as shown in the designs.
-2. The alignment of certain elements changes. For example, the "superfooter", with the "About Us" link and the social icons, shifts to the right on large viewports. By contrast, the site name / copyright notice shifts to the left.
+![Highlighted screenshot of the alignment of the top/bottom elements in the footer on desktop](/docs/footer-diagonals.png)
+
+We also need to switch from a vertical list to a dynamic grid, for the main nav links:
+
+![Screenshot of the footer's main nav on tablet](/docs/footer-main-nav-tablet.png)
+
+Finally, we want the columns on desktop to be equally-spaced:
+
+![Screenshot of the footer's main nav on desktop](/docs/footer-link-alignment.png)
 
 ---
 
