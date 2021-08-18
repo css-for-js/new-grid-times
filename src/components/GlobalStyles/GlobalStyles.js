@@ -124,7 +124,7 @@ button {
     outline-offset: 2px;
   }
 
-  &:focus:not(.focus-visible) {
+  &:focus:not(:focus-visible) {
     outline: none;
   }
 }
