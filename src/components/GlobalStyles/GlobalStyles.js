@@ -118,15 +118,6 @@ button {
   text-align: left;
   font: inherit;
   color: inherit;
-
-  &:focus {
-    outline: 2px auto var(--color-primary);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(.focus-visible) {
-    outline: none;
-  }
 }
 
 a {
