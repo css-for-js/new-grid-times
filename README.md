@@ -74,7 +74,7 @@ In the mockup, our main story's preview text is truncated on mobile after 8 line
 
 The exact # of lines shown depends on the viewport size. For example, the amount of lines doubles on tablet:
 
-![Close-up of the preview text on mobile](/docs/text-truncation-tablet.png)
+![Close-up of the preview text on tablet](/docs/text-truncation-tablet.png)
 
 > **Note:** on certain screen sizes, you may see an ellipsis alone on its own line. Don't worry about trying to solve for this.
 
