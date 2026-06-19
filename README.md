@@ -189,4 +189,4 @@ Finally, we want the columns on desktop to be equally-spaced:
 ## Solution
 
 View the solution on the course platform:
-https://courses.joshwcomeau.com/css-for-js/07-css-grid/19-workshop-solution
+https://courses.joshwcomeau.com/css-for-js/07-css-grid/19.01-workshop-solution
