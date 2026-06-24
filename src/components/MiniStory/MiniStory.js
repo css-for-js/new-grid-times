@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
 const MiniStory = ({ id, image, title }) => {
   return (
@@ -16,6 +16,8 @@ const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 180px;
+  overflow: auto;
 `;
 
 const Image = styled.img`
